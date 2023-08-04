@@ -1,22 +1,37 @@
 import { useEffect, useState } from 'react'
 import axios from 'axios'
+import Quote from '../components/quote';
+
+interface IQuoteProps {
+    data: {
+        quote: String
+        author: String
+    }
+}
 
 export function QuoteIndex() {
-    const [data, setData] = useState(null)
+    const [data, setData] = useState<IQuoteProps | any>()
 
     useEffect(() => {
-        axios.get("http://localhost:3030/api/quote/")
-        .then((res) => setData(res.data))
-        .catch(err => {
-            console.error("err", err)
-        })
+        async function fetchData() {
+            try {
+                const res = await axios.get("http://localhost:3030/api/quote/")
+                setData(res.data)
+            } catch (err) {
+                console.error("err", err)
+            }
+        }
+
+        fetchData()
 
         console.log("data", data)
-    }, [])
+    }, []);
 
     return (
         <div className="quote-index">
-            <h2>QuoteIndex</h2>
+            {data &&
+                <Quote data={data} />
+            }
         </div>
     )
 }
