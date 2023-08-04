@@ -8,17 +8,9 @@
 }
 
 html {
-  // line-height: lh(26px);
-
   @media (max-width: 1300px) {
     // font-size: 13px;
   }
-}
-
-body {
-  margin: 0;
-  background-color: $clr1;
-  min-height: 100vh;
 }
 
 h1,
@@ -39,7 +31,9 @@ a {
   color: unset;
 }
 
-
+body {
+  margin: 0;
+}
 
 /* Dont stretch my Media */
 embed,
