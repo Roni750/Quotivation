@@ -1,0 +1,105 @@
+/* flex helpers */
+
+.flex {
+  display: flex;
+}
+
+.flex.flex-column{
+    flex-direction: column;
+}
+
+.flex.justify-center{
+    justify-content: center;
+}
+
+.flex.justify-between{
+    justify-content: space-between;
+}
+
+.flex.align-center{
+    align-items: center;
+}
+
+// Grid helpers
+.grid {
+    display: grid;
+}
+
+/* text helpers */
+
+.colored-text {
+    color: $clr1;
+}
+
+/* list helpers */
+
+.clean-list {
+    padding: 0;
+    margin: 0;
+    list-style-type: none;
+}
+
+/* font awsome */
+
+.fa {
+    font-family: fa;
+}
+
+.fa.fa-facebook::before {
+    content: "\f39e";
+}
+
+.fa.fa-twitter::before {
+    content: "\f099";
+}
+
+.fa.fa-dribbble::before {
+    content: "\f17d";
+}
+
+.fa.fa-behance::before {
+    content: "\f1b4";
+}
+
+// Text helpers
+.yellow-txt {
+    color: $clr1;
+}
+
+// Button helpers
+.btn {
+    clip-path: polygon(30% 0%, 70% 0%, 100% 30%, 100% 70%, 70% 100%, 30% 100%, 0% 70%, 0% 30%);
+    width: fit-content;
+    background-color: $clr1;
+}
+
+.arrow-btn-left {
+    clip-path: polygon(40% 0%, 40% 20%, 100% 20%, 100% 80%, 40% 80%, 40% 100%, 0% 50%);
+    width: 26px;
+    height: 25px;
+}
+
+.arrow-btn-right {
+    clip-path: polygon(0% 20%, 60% 20%, 60% 0%, 100% 50%, 60% 100%, 60% 80%, 0% 80%);
+    width: 26px;
+    height: 25px;
+}
+
+// Txt helpers
+.text {
+    font-family: CodeSaver;
+}
+
+.title {
+    font-family: UnitedStencil;
+    color: $clr1;
+}
+
+.uppercase {
+    text-transform: uppercase;
+}
+
+.active-label {
+    color: $clr1;
+    border-block-end: $clr1 2px solid;
+}

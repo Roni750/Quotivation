@@ -1,0 +1,14 @@
+button {
+    cursor: pointer;
+    border: 0;
+}
+
+button:hover {
+    background-color: $clr4;
+    color: white;
+    transition: .3s;
+}
+
+input:focus {
+    transition: background-color 1s;
+}

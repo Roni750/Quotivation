@@ -1,0 +1,58 @@
+::selection {
+  background-color: $clr4;
+  color: $clr1;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  // line-height: lh(26px);
+
+  @media (max-width: 1300px) {
+    // font-size: 13px;
+  }
+}
+
+body {
+  margin: 0;
+  background-color: $clr1;
+  min-height: 100vh;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin: 0em;
+}
+
+// p {
+//   margin: 0 0 1em;
+// }
+
+a {
+  text-decoration: none;
+  color: unset;
+}
+
+
+
+/* Dont stretch my Media */
+embed,
+video,
+object {
+  max-width: 100%
+}
+
+/* Simple and useful CSS Debugging Technique */
+// .debug * {
+//   outline: 1px solid gold
+// }
+
+a.active {
+  text-decoration: overline;
+}
