@@ -18,18 +18,37 @@ async function getById(quoteId) {
     }
 }
 
-
 async function query() {
     try {
-        // const criteria = {}
-        const collection = await dbService.getCollection('quote')
-        const quotes = await collection.find({}).toArray()
-        return quotes
+        const collection = await dbService.getCollection('quote');
+        const quotes = await collection.find({}).toArray();
+        
+        if (quotes.length === 0) {
+            return null; // No quotes found in the collection
+        }
+        
+        const randomIndex = Math.floor(Math.random() * quotes.length);
+        const randomQuote = quotes[randomIndex];
+        
+        return randomQuote;
     } catch (err) {
-        logger.error('cannot find quotes', err)
-        throw err
+        logger.error('cannot find quotes', err);
+        throw err;
     }
 }
+
+// Queries all available quotes
+// async function query() {
+//     try {
+//         // const criteria = {}
+//         const collection = await dbService.getCollection('quote')
+//         const quotes = await collection.find({}).toArray()
+//         return quotes
+//     } catch (err) {
+//         logger.error('cannot find quotes', err)
+//         throw err
+//     }
+// }
 
 export const quoteService = {
     getById,
