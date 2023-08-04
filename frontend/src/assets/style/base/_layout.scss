@@ -1,30 +1,30 @@
 .main-layout {
   margin: 0 auto;
-  display: grid;
-  // grid-template-columns: minmax(30px, 1fr) minmax(1200px, auto) minmax(30px, 1fr);
-  grid-template-columns: 20px 1fr 20px;
-  // grid-template-columns: $layoutPadding 1fr $layoutPadding;
+  padding: 0;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+
+
+  background: url("/paul-pastourmatzis-KT3WlrL_bsg-unsplash.jpg");
+  background-color: #cccccc;
+  /* Used if the image is unavailable */
+  height: 500px;
+  /* You must set a specified height */
+  background-position: center;
+  /* Center the image */
+  background-repeat: no-repeat;
+  /* Do not repeat the image */
+  background-size: cover;
+  /* Resize the background image to cover the entire container */
 
   main {
-    grid-column: 2;
+    flex: 1;
   }
 
   footer {
     grid-column: 2;
   }
-
-  // >* {
-  //   grid-column: 2;
-  // }
-
-  // >*.full {
-  //   grid-column: 1 / -1;
-  // }
-
-  // >*:not(.full) {
-  //   display: grid;
-  //   grid-auto-flow: dense;
-  // }
 
   @include for-narrow-layout {
     @include layoutGTC($break-narrow);
@@ -38,13 +38,3 @@
     @include layoutGTC($break-wide);
   }
 }
-
-.full {
-  grid-column: 1 / -1;
-}
-
-// .container {
-//   max-width: 800px;
-//   padding: 1em;
-//   margin: auto;
-// }
