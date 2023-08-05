@@ -1,0 +1,30 @@
+footer {
+    font-family: Arial;
+    display: flex;
+    justify-content: space-between;
+    background-color: whitesmoke;
+    padding-inline: .5em;
+    -webkit-box-shadow: inset 0px 7px 15px -2px rgba(0, 0, 0, 0.56);
+    box-shadow: inset 0px 7px 15px -2px rgba(0, 0, 0, 0.56);
+
+    & > * {
+        display: flex;
+        align-items: center;
+    }
+
+    nav {
+        a {
+            padding-block: 1em;
+            padding-inline: .3em;
+            transition: .4s background-color, .4s color;
+            &:hover {
+                background: #888888;
+                color: whitesmoke;
+            }
+        }
+    }
+
+    .socials {
+        gap: .5em;
+    }
+}
