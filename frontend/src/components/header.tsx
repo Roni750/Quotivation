@@ -1,6 +1,6 @@
 export function Header() {
 
     return (
-        <h2>Quotivation</h2>
+        <header><span>“</span>Quotivation</header>
     )
 }
