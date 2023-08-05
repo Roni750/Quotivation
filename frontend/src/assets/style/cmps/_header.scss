@@ -1,0 +1,14 @@
+header {
+    display: flex;
+    font-family: Poppins;
+    font-size: 32px;
+    text-transform: uppercase;
+    margin: 0 auto;
+    margin-block-start: .4em;
+    color: $clr1;
+
+    span {
+        font-family: Prata;
+        font-size: 50px;
+    }
+}
