@@ -11,11 +11,11 @@ export function Footer() {
                 <Link to="/about">About</Link>
             </nav>
             <div className="count">
-                Used 2,028 times
+                <Link to="/">Used 2,028 times</Link>
             </div>
             <div className="socials">
                 <a href="https://github.com/Roni750"><FaGithub /></a>
-                <a href="www.linkedin.com/in/roni-yerushalmi-2184b0227"><FaLinkedin value={{ color: "blue" }} color="#0a66c2" /></a>
+                <a href="www.linkedin.com/in/roni-yerushalmi-2184b0227"><FaLinkedin color="#0a66c2" /></a>
             </div>
         </footer>
     )
