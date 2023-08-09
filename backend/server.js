@@ -28,7 +28,9 @@ if (process.env.NODE_ENV === 'production') {
 }
 
 import { quoteRoutes } from './api/quote/quote.routes.js'
+import {countRoutes} from './api/count/count.routes.js'
 app.use('/api/quote', quoteRoutes)
+app.use('/api/count', countRoutes)
 
 app.get('/**', (req, res) => {
 	res.sendFile(path.resolve('public/index.html'))
