@@ -23,8 +23,6 @@ export function QuoteIndex() {
         }
 
         fetchData()
-
-        console.log("data", data)
     }, []);
 
     return (
