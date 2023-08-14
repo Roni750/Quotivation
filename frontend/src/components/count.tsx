@@ -7,7 +7,6 @@ interface ICount {
 }
 
 function Count({ data: { count } }: ICount) {
-    
     return (
         <Link to="/">Used {count} times</Link>
     )
