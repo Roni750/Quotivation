@@ -36,7 +36,7 @@ export function Footer() {
             {data && <Count data={data} />}
             <div className="socials">
                 <a href="https://github.com/Roni750"><FaGithub /></a>
-                <a href="www.linkedin.com/in/roni-yerushalmi-2184b0227"><FaLinkedin color="#0a66c2" /></a>
+                <a href="https://www.linkedin.com/in/yerushalmi-roni/"><FaLinkedin color="#0a66c2" /></a>
             </div>
         </footer>
     )
