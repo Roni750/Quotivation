@@ -1,4 +1,4 @@
-import { Snippet } from "../components/snippet"
+import { NavLink, NavNavLink, Outlet } from "react-router-dom"
 
 export function Docs() {
     const json1 = `{
@@ -8,16 +8,15 @@ export function Docs() {
 
     const fetchQuoteByAuthorName = `async function fetchData() {
     try {
-        const response = await fetch("http://localhost:3030/api/quote/Steve Jobs");
+        const response = await fetch("http://localhost:3030/api/quote/Steve Jobs")
 
         if (!response.ok) {
-            throw new Error('Network response was not ok');
+            throw new Error('Network response was not ok')
         }
 
-        const data = await response.json();
-        setData(data);
+        const data = await response.json()
     } catch (error) {
-        console.error('Error fetching data:', error);
+        console.error('Error fetching data:', error)
     }
 }`
 
@@ -41,16 +40,15 @@ export function Docs() {
 
     const fetchBatchOfQuotes = `async function fetchData() {
     try {
-        const response = await fetch("http://localhost:3030/api/quote/batch/3");
+        const response = await fetch("http://localhost:3030/api/quote/batch/3")
 
         if (!response.ok) {
-            throw new Error('Network response was not ok');
+            throw new Error('Network response was not ok')
         }
 
-        const data = await response.json();
-        setData(data);
+        const data = await response.json()
     } catch (error) {
-        console.error('Error fetching data:', error);
+        console.error('Error fetching data:', error)
     }
 }`
 
@@ -71,6 +69,26 @@ export function Docs() {
         "author": "Earl Nightingale"
     }
 ]`
+
+    const fetchQuoteById = `async function fetchData() {
+    try {
+        const response = await fetch("http://localhost:3030/api/quote/64ccc1c57fc90e687dccf4c6");
+
+        if (!response.ok) {
+            throw new Error('Network response was not ok')
+        }
+
+        const data = await response.json()
+    } catch (error) {
+        console.error('Error fetching data:', error)
+    }
+}`
+
+    const responseQuoteById = `{
+    "_id": "64ccc1c57fc90e687dccf4c6",
+    "quote": "We become what we think about.",
+    "author": "Earl Nightingale"
+}`
 
     return (
         <section className="docs">
@@ -107,41 +125,14 @@ export function Docs() {
             </p>
 
             <h1>Endpoints</h1>
-            <h2>1. Get a Random Quote</h2>
-            <p>Returns a random motivational quote.</p>
-            <ul>
-                <li>URL: /api/quote/random</li>
-                <li>Method: GET</li>
-            </ul>
+            <nav className="docs-nav">
+                <NavLink to="random">Random Quote</NavLink>
+                <NavLink to="author">Get Quotes by author</NavLink>
+                <NavLink to="batch">Quotes batch</NavLink>
+                <NavLink to="getbyid">Get quote by id</NavLink>
+            </nav>
 
-            <p>Example response:</p>
-            <Snippet language="json" code={json1} />
-
-            <h2>2. Search quotes by author</h2>
-            <p>Searches for motivation quotes by author name</p>
-            <ul>
-                <li>URL: /api/quote/author/:name</li>
-                <li>Method: GET</li>
-            </ul>
-
-            <p>Example request:</p>
-            <Snippet language="javascript" code={fetchQuoteByAuthorName} />
-            <p>Example response:</p>
-            <Snippet language="json" code={responseByAuthorName} />
-
-            <h2>3. Get a batch of quotes</h2>
-            <p>Randomly picks up the amount of quotes defined in the request</p>
-            <ul>
-                <li>URL: /api/quote/batch/:amount</li>
-                <li>Method: GET</li>
-            </ul>
-
-            <p>Example request:</p>
-            <Snippet language="javascript" code={fetchBatchOfQuotes} />
-            <p>Example response:</p>
-            <Snippet language="json" code={responseBatch} />
-
-
+            <Outlet />
         </section>
     )
 }
