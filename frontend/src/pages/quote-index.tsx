@@ -12,6 +12,10 @@ interface IQuoteProps {
 export function QuoteIndex() {
     const [data, setData] = useState<IQuoteProps | any>()
 
+    useEffect(() => {
+        fetchData()
+    }, [])
+
     async function fetchData() {
         try {
             const res = await axios.get("http://localhost:3030/api/quote/")
@@ -21,14 +25,11 @@ export function QuoteIndex() {
         }
     }
 
-    useEffect(() => {
-        fetchData()
-    }, [])
-
     return (
         <div className="quote-index">
-            {data &&
+            {data ? (
                 <Quote data={data} />
+            ) : <h4>No quotes for display</h4>
             }
         </div>
     )
