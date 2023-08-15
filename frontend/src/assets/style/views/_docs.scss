@@ -3,7 +3,7 @@
     border-radius: 25px;
     margin: 0 auto;
     width: rem(940px);
-    padding: 2em;
+    padding: 1em;
     font-family: poppins;
     margin-block-end: 1em;
     backdrop-filter: blur(5px);
@@ -16,10 +16,19 @@
     nav {
         display: flex;
         align-items: center;
+        gap: 1em;
         margin-block-end: 1em;
 
         .active {
             background: #8EAFCE;
+
+            &::before {
+                content: "";
+                position: absolute;
+                height: 2px;
+                width: 100%;
+                background-color: black;
+            }
         }
 
         a {
@@ -28,9 +37,10 @@
             display: flex;
             position: relative;
             padding: .5em;
+            transition: 0.4s background-color;
 
             &:hover {
-                background: #6A7987;
+                background-color: #3B4C5C;
             }
 
             &::before {
@@ -39,8 +49,8 @@
                 height: 2px;
                 width: 0px;
                 background-color: black;
-                transition: width .5s;
-                top: 0;
+                transition: width .4s;
+                bottom: 0;
                 left: 0;
             }
 

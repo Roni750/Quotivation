@@ -1,94 +1,6 @@
-import { NavLink, NavNavLink, Outlet } from "react-router-dom"
+import { NavLink, Outlet } from "react-router-dom"
 
 export function Docs() {
-    const json1 = `{
-    "quote": "Example is not the main thing in influencing other people; it’s the only thing.",
-    "author": "Abraham Lincoln"
-}`
-
-    const fetchQuoteByAuthorName = `async function fetchData() {
-    try {
-        const response = await fetch("http://localhost:3030/api/quote/Steve Jobs")
-
-        if (!response.ok) {
-            throw new Error('Network response was not ok')
-        }
-
-        const data = await response.json()
-    } catch (error) {
-        console.error('Error fetching data:', error)
-    }
-}`
-
-    const responseByAuthorName = `[
-    {
-        "_id": "64ccc1c57fc90e687dccf4ce",
-        "quote": "Your time is limited, so don’t waste it living someone else’s life.",
-        "author": "Steve Jobs"
-    },
-    {
-        "_id": "64ccc1c57fc90e687dccf51e",
-        "quote": "The only way to do great work is to love what you do.",
-        "author": "Steve Jobs"
-    },
-    {
-        "_id": "64ccc1c57fc90e687dccf600",
-        "quote": "“Remembering you are going to die is the best way I know to avoid the trap of thinking you have something to lose.",
-        "author": "Steve Jobs"
-    }
-]`
-
-    const fetchBatchOfQuotes = `async function fetchData() {
-    try {
-        const response = await fetch("http://localhost:3030/api/quote/batch/3")
-
-        if (!response.ok) {
-            throw new Error('Network response was not ok')
-        }
-
-        const data = await response.json()
-    } catch (error) {
-        console.error('Error fetching data:', error)
-    }
-}`
-
-    const responseBatch = `[
-    {
-        "_id": "64ccc1c67fc90e687dccf65e",
-        "quote": "“Everyone is a genius. But if you judge a fish by its ability to climb a tree, it will spend its whole life believing it is stupid.",
-        "author": "Albert Einstein, Theoretical Physicist"
-    },
-    {
-        "_id": "64ccc1c57fc90e687dccf547",
-        "quote": "There is no happiness except in the realization that we have accomplished something.",
-        "author": "Henry Ford"
-    },
-    {
-        "_id": "64ccc1c57fc90e687dccf4c6",
-        "quote": "We become what we think about.",
-        "author": "Earl Nightingale"
-    }
-]`
-
-    const fetchQuoteById = `async function fetchData() {
-    try {
-        const response = await fetch("http://localhost:3030/api/quote/64ccc1c57fc90e687dccf4c6");
-
-        if (!response.ok) {
-            throw new Error('Network response was not ok')
-        }
-
-        const data = await response.json()
-    } catch (error) {
-        console.error('Error fetching data:', error)
-    }
-}`
-
-    const responseQuoteById = `{
-    "_id": "64ccc1c57fc90e687dccf4c6",
-    "quote": "We become what we think about.",
-    "author": "Earl Nightingale"
-}`
 
     return (
         <section className="docs">
@@ -131,7 +43,6 @@ export function Docs() {
                 <NavLink to="batch">Quotes batch</NavLink>
                 <NavLink to="getbyid">Get quote by id</NavLink>
             </nav>
-
             <Outlet />
         </section>
     )

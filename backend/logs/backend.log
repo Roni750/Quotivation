@@ -353,3 +353,88 @@
 4.8.2023, 17:51:15 - DEBUG - Getting Quotes: | {} 
 4.8.2023, 17:58:16 - DEBUG - Getting Quotes: | {} 
 5.8.2023, 17:04:24 - DEBUG - Getting Quotes: | {} 
+11.8.2023, 9:07:28 - INFO - Server is running on port: 3030 
+11.8.2023, 9:07:37 - DEBUG - Getting Quotes: | {} 
+11.8.2023, 9:18:29 - INFO - Server is running on port: 3030 
+11.8.2023, 9:18:33 - DEBUG - Getting Quotes: | {} 
+11.8.2023, 9:18:33 - ERROR - Failed to get quote | Failed to get count 
+11.8.2023, 9:18:33 - DEBUG - Getting Quotes: | {} 
+11.8.2023, 9:18:33 - ERROR - Failed to get quote | Failed to get count 
+11.8.2023, 9:19:10 - DEBUG - Getting Quotes: | {} 
+11.8.2023, 9:19:10 - ERROR - Failed to get quote | Failed to get count 
+11.8.2023, 9:20:23 - DEBUG - Getting Quotes: | {} 
+11.8.2023, 9:20:25 - DEBUG - Getting Quotes: | {} 
+11.8.2023, 11:53:43 - INFO - Server is running on port: 3030 
+14.8.2023, 10:07:33 - INFO - Server is running on port: 3030 
+14.8.2023, 10:07:33 - DEBUG - Getting Quotes: | {} 
+14.8.2023, 10:09:19 - INFO - Server is running on port: 3030 
+14.8.2023, 10:11:05 - DEBUG - Getting Quotes: | {} 
+14.8.2023, 12:36:47 - DEBUG - Getting Quotes: | {} 
+14.8.2023, 12:36:56 - DEBUG - Getting Quotes: | {} 
+14.8.2023, 12:37:05 - DEBUG - Getting Quotes: | {} 
+14.8.2023, 12:37:14 - DEBUG - Getting Quotes: | {} 
+14.8.2023, 12:37:20 - DEBUG - Getting Quotes: | {} 
+14.8.2023, 12:37:28 - DEBUG - Getting Quotes: | {} 
+14.8.2023, 12:37:32 - DEBUG - Getting Quotes: | {} 
+14.8.2023, 12:37:35 - DEBUG - Getting Quotes: | {} 
+14.8.2023, 12:37:37 - DEBUG - Getting Quotes: | {} 
+14.8.2023, 12:37:42 - DEBUG - Getting Quotes: | {} 
+14.8.2023, 12:37:50 - DEBUG - Getting Quotes: | {} 
+14.8.2023, 12:38:02 - DEBUG - Getting Quotes: | {} 
+14.8.2023, 12:38:09 - DEBUG - Getting Quotes: | {} 
+14.8.2023, 12:38:13 - DEBUG - Getting Quotes: | {} 
+14.8.2023, 12:38:47 - DEBUG - Getting Quotes: | {} 
+14.8.2023, 12:38:50 - DEBUG - Getting Quotes: | {} 
+14.8.2023, 12:39:04 - DEBUG - Getting Quotes: | {} 
+14.8.2023, 12:42:12 - INFO - Server is running on port: 3030 
+14.8.2023, 12:47:28 - INFO - Server is running on port: 3030 
+14.8.2023, 13:44:44 - INFO - Server is running on port: 3030 
+14.8.2023, 19:13:57 - INFO - Server is running on port: 3030 
+15.8.2023, 11:32:08 - DEBUG - Getting Quotes: | {} 
+15.8.2023, 11:32:10 - DEBUG - Getting Quotes: | {} 
+15.8.2023, 11:37:58 - DEBUG - Getting Quotes: | {} 
+15.8.2023, 11:38:02 - DEBUG - Getting Quotes: | {} 
+15.8.2023, 11:45:49 - DEBUG - Getting Quotes: | {} 
+15.8.2023, 11:45:56 - DEBUG - Getting Quotes: | {} 
+15.8.2023, 11:50:45 - DEBUG - Getting Quotes: | {} 
+15.8.2023, 11:50:49 - DEBUG - Getting Quotes: | {} 
+15.8.2023, 13:03:38 - DEBUG - Getting Quotes: | {} 
+15.8.2023, 13:03:41 - DEBUG - Getting Quotes: | {} 
+15.8.2023, 13:03:50 - DEBUG - Getting Quotes: | {} 
+15.8.2023, 13:06:04 - DEBUG - Getting Quotes: | {} 
+15.8.2023, 13:06:22 - DEBUG - Getting Quotes: | {} 
+15.8.2023, 14:37:44 - DEBUG - Getting Quotes: | {} 
+15.8.2023, 14:37:46 - DEBUG - Getting Quotes: | {} 
+15.8.2023, 14:38:15 - DEBUG - Getting Quotes: | {} 
+15.8.2023, 14:44:23 - DEBUG - Getting Quotes: | {} 
+15.8.2023, 14:45:12 - DEBUG - Getting Quotes: | {} 
+15.8.2023, 14:45:34 - DEBUG - Getting Quotes: | {} 
+15.8.2023, 14:48:00 - DEBUG - Getting Quotes: | {} 
+15.8.2023, 15:11:59 - DEBUG - Getting Quotes: | {} 
+15.8.2023, 15:53:21 - DEBUG - Getting Quotes: | {} 
+15.8.2023, 15:55:19 - DEBUG - Getting Quotes: | {} 
+15.8.2023, 17:46:37 - INFO - Server is running on port: 3030 
+15.8.2023, 17:46:48 - DEBUG - Getting Quotes: | {} 
+15.8.2023, 17:46:59 - DEBUG - Getting Quotes: | {} 
+15.8.2023, 18:01:43 - DEBUG - Getting Quotes: | {} 
+15.8.2023, 18:02:08 - DEBUG - Getting Quotes: | {} 
+15.8.2023, 18:02:47 - DEBUG - Getting Quotes: | {} 
+15.8.2023, 18:02:50 - DEBUG - Getting Quotes: | {} 
+15.8.2023, 18:03:01 - DEBUG - Getting Quotes: | {} 
+15.8.2023, 18:03:10 - DEBUG - Getting Quotes: | {} 
+15.8.2023, 18:03:23 - DEBUG - Getting Quotes: | {} 
+15.8.2023, 18:04:50 - DEBUG - Getting Quotes: | {} 
+15.8.2023, 18:05:11 - DEBUG - Getting Quotes: | {} 
+15.8.2023, 18:05:26 - DEBUG - Getting Quotes: | {} 
+15.8.2023, 18:12:42 - DEBUG - Getting Quotes: | {} 
+15.8.2023, 18:14:01 - DEBUG - Getting Quotes: | {} 
+15.8.2023, 18:14:12 - DEBUG - Getting Quotes: | {} 
+15.8.2023, 18:14:17 - DEBUG - Getting Quotes: | {} 
+15.8.2023, 18:14:21 - DEBUG - Getting Quotes: | {} 
+15.8.2023, 18:14:27 - DEBUG - Getting Quotes: | {} 
+15.8.2023, 18:15:04 - DEBUG - Getting Quotes: | {} 
+15.8.2023, 18:19:53 - DEBUG - Getting Quotes: | {} 
+15.8.2023, 18:19:57 - DEBUG - Getting Quotes: | {} 
+15.8.2023, 18:21:11 - DEBUG - Getting Quotes: | {} 
+15.8.2023, 18:21:59 - DEBUG - Getting Quotes: | {} 
+15.8.2023, 18:23:56 - INFO - Server is running on port: 3030 
