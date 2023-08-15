@@ -1,6 +1,7 @@
 import http from 'http'
 import cors from 'cors'
 import express from 'express'
+import os from 'os'
 import { logger } from './services/logger.service.js'
 import path from 'path'
 import { config } from 'dotenv'
@@ -19,16 +20,34 @@ if (process.env.NODE_ENV === 'production') {
 } else {
 	const corsOptions = {
 		origin: ['http://127.0.0.1:3000',
-		'http://localhost:3000',
-		'http://127.0.0.1:5173',
-		'http://localhost:5173'],
+			'http://localhost:3000',
+			'http://127.0.0.1:5173',
+			'http://localhost:5173'],
 		credentials: true,
 	}
 	app.use(cors(corsOptions))
 }
 
+const networkInterfaces = os.networkInterfaces()
+let ipAddress = null
+
+for (const interfaceName in networkInterfaces) {
+	const interfaceInfo = networkInterfaces[interfaceName]
+	for (const info of interfaceInfo) {
+		if (info.family === 'IPv4' && !info.internal) {
+			ipAddress = info.address
+			break
+		}
+	}
+	if (ipAddress) {
+		break
+	}
+}
+
+console.log(`Machine's IPv4 Address: ${ipAddress}`);
+
 import { quoteRoutes } from './api/quote/quote.routes.js'
-import {countRoutes} from './api/count/count.routes.js'
+import { countRoutes } from './api/count/count.routes.js'
 app.use('/api/quote', quoteRoutes)
 app.use('/api/count', countRoutes)
 

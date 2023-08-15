@@ -1,4 +1,8 @@
+import { config } from "dotenv"
+config()
+
 export default {
-	dbURL: 'mongodb://127.0.0.1:27017/quotivation_backup',
-	dbName: 'quotivation_backup',
+	// dbURL: 'mongodb+srv://roni750:roni42@cluster0.ckri6ih.mongodb.net/',
+	dbURL: process.env.NODE_ENV.MONGODB_URI,
+	dbName: 'quotes_db',
 }
