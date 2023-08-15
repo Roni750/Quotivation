@@ -1,9 +1,9 @@
-import { Link } from "react-router-dom"
 import { useEffect, useState } from "react"
 import axios from 'axios'
 import { FaGithub } from 'react-icons/fa'
 import { FaLinkedin } from 'react-icons/fa'
 import Count from "./count"
+import { NavLink } from "react-router-dom"
 
 interface ICount {
     count: string
@@ -30,8 +30,8 @@ export function Footer() {
     return (
         <footer>
             <nav>
-                <Link to="/docs">Docs</Link>
-                <Link to="/about">About</Link>
+                <NavLink to="/docs">Docs</NavLink>
+                <NavLink to="/about">About</NavLink>
             </nav>
             {data && <Count data={data} />}
             <div className="socials">
