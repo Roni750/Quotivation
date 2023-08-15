@@ -36,23 +36,21 @@ object {
   max-width: 100%
 }
 
-/* width */
 ::-webkit-scrollbar {
-  width: 10px;
+  width: rem(7px);
+  height: 7px;
 }
 
-/* Track */
 ::-webkit-scrollbar-track {
   background: #f1f1f1;
+  border-radius: 5px 5px 5px 5px;
 }
 
-/* Handle */
 ::-webkit-scrollbar-thumb {
   background: #888;
   border-radius: 5px 5px 5px 5px;
 }
 
-/* Handle on hover */
 ::-webkit-scrollbar-thumb:hover {
   background: #555;
 }
@@ -61,7 +59,3 @@ object {
 // .debug * {
 //   outline: 1px solid gold
 // }
-
-a.active {
-  text-decoration: overline;
-}
