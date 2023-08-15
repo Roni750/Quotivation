@@ -12,18 +12,18 @@ interface IQuoteProps {
 export function QuoteIndex() {
     const [data, setData] = useState<IQuoteProps | any>()
 
-    useEffect(() => {
-        async function fetchData() {
-            try {
-                const res = await axios.get("http://localhost:3030/api/quote/")
-                setData(res.data)
-            } catch (err) {
-                console.error("err", err)
-            }
+    async function fetchData() {
+        try {
+            const res = await axios.get("http://localhost:3030/api/quote/")
+            setData(res.data)
+        } catch (err) {
+            console.error("err", err)
         }
+    }
 
+    useEffect(() => {
         fetchData()
-    }, []);
+    }, [])
 
     return (
         <div className="quote-index">
