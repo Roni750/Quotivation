@@ -1,8 +1,0 @@
-backend/node_modules
-backend/.env
-backend/logs
-frontend/node_modules
-node_modules 
-.gitignore
-backend/logs/backend.log
-
