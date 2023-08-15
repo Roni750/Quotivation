@@ -4,8 +4,8 @@ import SyntaxHighlighter from 'react-syntax-highlighter';
 import { atomOneDark } from 'react-syntax-highlighter/dist/esm/styles/hljs';
 
 interface SyntaxHighlighterProps {
-    language: string;
-    code: string;
+    language: string
+    code: string
 }
 
 export function Snippet({ language, code }: SyntaxHighlighterProps) {
@@ -22,7 +22,7 @@ export function Snippet({ language, code }: SyntaxHighlighterProps) {
                         setCopy(true)
                         setTimeout(() => {
                             setCopy(false)
-                        }, 3000);
+                        }, 3000)
                     }}><FaCopy />Copy</span>
                 }
             </div>
@@ -30,5 +30,5 @@ export function Snippet({ language, code }: SyntaxHighlighterProps) {
                 {code}
             </SyntaxHighlighter>
         </div>
-    );
+    )
 }
