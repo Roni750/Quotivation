@@ -12,4 +12,47 @@
         font-size: rem(32px);
         font-family: poppins;
     }
+
+    nav {
+        display: flex;
+        align-items: center;
+        margin-block-end: 1em;
+
+        .active {
+            background: #8EAFCE;
+        }
+
+        a {
+            color: whitesmoke;
+            width: fit-content;
+            display: flex;
+            position: relative;
+            padding: .5em;
+
+            &:hover {
+                background: #6A7987;
+            }
+
+            &::before {
+                content: "";
+                position: absolute;
+                height: 2px;
+                width: 0px;
+                background-color: black;
+                transition: width .5s;
+                top: 0;
+                left: 0;
+            }
+
+            &:hover {
+                &::before {
+                    content: "";
+                    position: absolute;
+                    height: 2px;
+                    width: 100%;
+                    background-color: black;
+                }
+            }
+        }
+    }
 }
