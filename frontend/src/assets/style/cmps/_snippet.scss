@@ -1,0 +1,25 @@
+.snippet-container {
+    background: #414141;
+    border-radius: 15px 15px;
+    margin-block-end: 1em;
+    .snippet-header {
+        display: flex;
+        justify-content: space-between;
+        padding-block: .3em;
+        padding-inline: 1em;
+        color: #b9aea0;
+
+        .copy {
+            display: flex;
+            align-items: center;
+            gap: .3em;
+            cursor: pointer;
+        }
+    }
+
+    pre {
+        margin: 0;
+        border-radius: 0 0 15px 15px;
+
+    }
+}
