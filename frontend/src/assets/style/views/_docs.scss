@@ -1,0 +1,15 @@
+.docs {
+    background: rgba(245, 245, 245, 0.2);
+    border-radius: 25px;
+    margin: 0 auto;
+    width: rem(940px);
+    padding: 2em;
+    font-family: poppins;
+    margin-block-end: 1em;
+    backdrop-filter: blur(5px);
+
+    .title {
+        font-size: rem(32px);
+        font-family: poppins;
+    }
+}
