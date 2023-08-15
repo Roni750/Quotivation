@@ -2,6 +2,8 @@
     background: #414141;
     border-radius: 15px 15px;
     margin-block-end: 1em;
+    font-size: rem(14px);
+
     .snippet-header {
         display: flex;
         justify-content: space-between;
@@ -21,5 +23,23 @@
         margin: 0;
         border-radius: 0 0 15px 15px;
 
+    }
+
+    ::-webkit-scrollbar {
+        height: 10px;
+    }
+
+    ::-webkit-scrollbar-track {
+        background: #f1f1f1;
+        border-radius: 0px 0px 20px 20px;
+    }
+
+    ::-webkit-scrollbar-thumb {
+        background: #888;
+        border-radius: 0px 0px 20px 20px;
+    }
+
+    ::-webkit-scrollbar-thumb:hover {
+        background: #555;
     }
 }
