@@ -51,16 +51,11 @@ export async function getBatchQuotes(req, res) {
 
 export async function getQuotes(req, res) {
   try {
-    logger.debug('Getting Quotes:', req.query)
-    const filterBy = {
-      txt: req.query.txt || '',
-      pageIdx: req.query.pageIdx
-    }
-    const quotes = await quoteService.query(filterBy)
-
+    logger.debug('Getting Quotes:')
+    const quotes = await quoteService.query()
     res.json(quotes)
   } catch (err) {
-    logger.error('Failed to get quotes123123', err)
+    logger.error('Failed to get quotes', err)
     res.status(400).send({ err: 'Failed to get quotes' })
   }
 }

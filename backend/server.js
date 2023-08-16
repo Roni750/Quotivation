@@ -1,7 +1,6 @@
 import http from 'http'
 import cors from 'cors'
 import express from 'express'
-import os from 'os'
 import { logger } from './services/logger.service.js'
 import path from 'path'
 import { config } from 'dotenv'
@@ -10,7 +9,6 @@ config()
 const app = express()
 const server = http.createServer(app)
 
-// Middleware
 app.use(cors());
 app.use(express.json());
 app.use(express.static('public'))
@@ -27,24 +25,6 @@ if (process.env.NODE_ENV === 'production') {
 	}
 	app.use(cors(corsOptions))
 }
-
-const networkInterfaces = os.networkInterfaces()
-let ipAddress = null
-
-for (const interfaceName in networkInterfaces) {
-	const interfaceInfo = networkInterfaces[interfaceName]
-	for (const info of interfaceInfo) {
-		if (info.family === 'IPv4' && !info.internal) {
-			ipAddress = info.address
-			break
-		}
-	}
-	if (ipAddress) {
-		break
-	}
-}
-
-console.log(`Machine's IPv4 Address: ${ipAddress}`);
 
 import { quoteRoutes } from './api/quote/quote.routes.js'
 import { countRoutes } from './api/count/count.routes.js'
