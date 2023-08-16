@@ -3,6 +3,10 @@
     "target": "ES2020",
     "useDefineForClassFields": true,
     "lib": ["ES2020", "DOM", "DOM.Iterable"],
+    "types": ["react", "react-dom", "@types/react-syntax-highlighter", "node"],
+    "allowSyntheticDefaultImports": true,
+    "useUnknownInCatchVariables": false,
+    "esModuleInterop":true,
     "module": "ESNext",
     "skipLibCheck": true,
 

@@ -1,5 +1,5 @@
 footer {
-    font-family: Arial;
+    font-family: poppins;
     display: flex;
     justify-content: space-between;
     background-color: whitesmoke;
@@ -7,7 +7,7 @@ footer {
     -webkit-box-shadow: inset 0px 7px 15px -2px rgba(0, 0, 0, 0.56);
     box-shadow: inset 0px 7px 15px -2px rgba(0, 0, 0, 0.56);
 
-    & > * {
+    &>* {
         display: flex;
         align-items: center;
     }
@@ -17,6 +17,7 @@ footer {
             padding-block: 1em;
             padding-inline: .3em;
             transition: .4s background-color, .4s color;
+
             &:hover {
                 background: #888888;
                 color: whitesmoke;
@@ -26,5 +27,10 @@ footer {
 
     .socials {
         gap: .5em;
+        font-size: 1.5em;
+
+        >* {
+            display: flex;
+        }
     }
 }

@@ -6,11 +6,8 @@ interface ICount {
     }
 }
 
-function Count({ data: { count } }: ICount) {
-    
+export default function Count({ data: { count } }: ICount) {
     return (
-        <Link to="/">Used {count} times</Link>
+        <Link to="/">API fetched {count} times</Link>
     )
 }
-
-export default Count

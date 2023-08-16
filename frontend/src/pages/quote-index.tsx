@@ -1,5 +1,6 @@
 import { useEffect, useState } from 'react'
-import axios from 'axios'
+import {quoteService} from '../services/quote.service.js'
+// import axios from 'axios'
 import Quote from '../components/quote';
 
 interface IQuoteProps {
@@ -13,22 +14,23 @@ export function QuoteIndex() {
     const [data, setData] = useState<IQuoteProps | any>()
 
     useEffect(() => {
-        async function fetchData() {
-            try {
-                const res = await axios.get("http://localhost:3030/api/quote/")
-                setData(res.data)
-            } catch (err) {
-                console.error("err", err)
-            }
-        }
-
         fetchData()
-    }, []);
+    }, [])
+
+    async function fetchData() {
+        try {
+            const quote = await quoteService.loadQuote()
+            setData(quote)
+        } catch(err) {
+            console.error(err)
+        }
+    }
 
     return (
         <div className="quote-index">
-            {data &&
+            {data ? (
                 <Quote data={data} />
+            ) : <h4>No quotes for display</h4>
             }
         </div>
     )

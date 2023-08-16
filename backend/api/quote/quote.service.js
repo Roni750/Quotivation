@@ -33,18 +33,6 @@ async function query() {
     }
 }
 
-
-// async function getBatchedQuotes(amount) {
-//     try {
-//         const collection = await dbService.getCollection('quote')
-//         const quote = await collection.find().limit(+amount)
-//         return quote
-//     } catch (err) {
-//         console.error(`Error while finding quotes`, err)
-//         throw err
-//     }
-// }
-
 async function getBatchedQuotes(amount) {
     try {
         const collection = await dbService.getCollection('quote')
@@ -62,13 +50,6 @@ async function getBatchedQuotes(amount) {
     }
 }
 
-// async function queryByAuthor(author) {
-//     const collection = await dbService.getCollection('quote')
-//     const quotes = await collection.find({"author": author}).toArray()
-//     console.log(quotes);
-//     return quotes
-// }
-
 async function queryByAuthor(author) {
     try {
         const collection = await dbService.getCollection('quote');
@@ -79,20 +60,6 @@ async function queryByAuthor(author) {
         throw err;
     }
 }
-
-// Queries all available quotes
-// async function query() {
-//     try {
-        // const criteria = {}
-//         const collection = await dbService.getCollection('quote')
-//         const quotes = await collection.find({}).toArray()
-//         console.log(quotes)
-//         return quotes
-//     } catch (err) {
-//         logger.error('cannot find quotes', err)
-//         throw err
-//     }
-// }
 
 export const quoteService = {
     getById,
