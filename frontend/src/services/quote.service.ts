@@ -20,7 +20,6 @@ async function loadQuote() {
 
 function query() {
     return httpService.get(BASE_URL)
-    // return storageService.query(STORAGE_KEY)
 }
 
 // function get(quoteId) {
