@@ -2,9 +2,10 @@ import { Snippet } from "../../components/snippet"
 
 export function DocsRandom() {
     const json1 = `{
-        "quote": "Example is not the main thing in influencing other people; it’s the only thing.",
-        "author": "Abraham Lincoln"
-    }`
+    "_id": "64dbbab3606bb353c68c7806",
+    "quote": "Example is not the main thing in influencing other people; it’s the only thing.",
+    "author": "Abraham Lincoln"
+}`
 
     return (
         <>
