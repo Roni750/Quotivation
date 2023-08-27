@@ -13,7 +13,7 @@ export function Docs() {
             <h2>
                 Base URL
             </h2>
-            The base URL for the API is: http://your-api-base-url.com
+            The base URL for the API is: https://quotivation.onrender.com
             <p></p>
 
             <h2>
