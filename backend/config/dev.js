@@ -1,4 +1,4 @@
 export default {
-	dbURL: 'mongodb://localhost:27017/quotes_db',
+	dbURL: 'mongodb://0.0.0.0:27017/',
 	dbName: 'quotes_db',
 }
