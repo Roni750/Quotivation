@@ -1,6 +1,5 @@
 import { useEffect, useState } from 'react'
 import {quoteService} from '../services/quote.service.js'
-// import axios from 'axios'
 import Quote from '../components/quote';
 
 interface IQuoteProps {
@@ -17,7 +16,7 @@ export function QuoteIndex() {
         fetchData()
     }, [])
 
-    async function fetchData() {
+    async function fetchData() { 
         try {
             const quote = await quoteService.loadQuote()
             setData(quote)
