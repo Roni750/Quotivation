@@ -2,7 +2,7 @@ import Axios, { AxiosRequestConfig, AxiosResponse } from 'axios';
 
 const BASE_URL = process.env.NODE_ENV === 'production'
     ? '/api/'
-    : '/localhost:3030/api/';
+    : 'http://localhost:3030/api/';
 
 
 // const BASE_URL = '/localhost:3030/api/'
