@@ -40,13 +40,13 @@ async function getBatchedQuotes(amount) {
         const quotes = await collection.aggregate([
             { $sample: { size: +amount } },
             { $limit: +amount }
-        ]).toArray();
+        ]).toArray()
 
-        console.log(quotes);
-        return quotes;
+        console.log(quotes)
+        return quotes
     } catch (err) {
-        console.error(`Error while finding quotes`, err);
-        throw err;
+        console.error(`Error while finding quotes`, err)
+        throw err
     }
 }
 
@@ -56,8 +56,8 @@ async function queryByAuthor(author) {
         const quotes = await collection.find({ author: { $regex: author, $options: 'i' } }).toArray();
         return quotes;
     } catch (err) {
-        logger.error('cannot find quotes', err);
-        throw err;
+        logger.error('cannot find quotes', err)
+        throw err
     }
 }
 
