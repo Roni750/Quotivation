@@ -24,8 +24,10 @@ function query() {
     return httpService.get(BASE_URL)
 }
 
-function fetchCount() {
+async function fetchCount() {
     try {
+        const heyo = await httpService.get(COUNTER_URL)
+        console.log("heyo", heyo)  
         return httpService.get(COUNTER_URL)
     } catch (err) {
         console.error("API counter couldn't be fetched.")
