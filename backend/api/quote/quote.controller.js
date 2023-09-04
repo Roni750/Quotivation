@@ -2,14 +2,12 @@ import { logger } from '../../services/logger.service.js'
 import { quoteService } from './quote.service.js'
 import { incrementUsageCount } from '../count/count.controller.js'
 
-import axios from 'axios'
 export async function getQuoteById(req, res) {
   try {
     const quoteId = req.params.id
     const quote = await quoteService.getById(quoteId)
     if (quote) {
-      // await axios.get("http://localhost:3030/api/count/increment")
-      // incrementUsageCount()
+      incrementUsageCount()
       res.json(quote)
     }
     else throw new Error('Failed to get quote')
@@ -24,7 +22,7 @@ export async function getQuotesByAuthor(req, res) {
   try {
     const quotes = await quoteService.queryByAuthor(author)
     if (quotes.length >= 1) {
-      // await axios.get("http://localhost:3030/api/count/increment")
+      incrementUsageCount()
       res.json(quotes)
     }
     else throw new Error(`Failed to get quotes by ${author}`)
@@ -39,7 +37,7 @@ export async function getBatchQuotes(req, res) {
     const amount = req.params.amount
     const quotes = await quoteService.getBatchedQuotes(amount)
     if (quotes.length >= 1) {
-      // await axios.get("http://localhost:3030/api/count/increment")
+      incrementUsageCount()
       res.json(quotes)
     }
   } catch (err) {

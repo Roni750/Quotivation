@@ -4,7 +4,6 @@ import { countService } from './count.service.js'
 export async function getUsageCount(req, res) {
   try {
     const count = await countService.query()
-    if (count) console.log("count", count)
     if (count) res.json(count)
     else throw new Error('Failed to get count')
   } catch (err) {
