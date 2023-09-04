@@ -13,20 +13,20 @@ export function Footer() {
     const [data, setData] = useState<ICount | null>()
 
     useEffect(() => {
-        async function fetchData() {
-            try {
-                const res = await axios.get("http://localhost:3030/api/count/")
-                setData(res.data[0])
-                
-            } catch (err) {
-                console.error("err", err)
-            }
-        }
-
         fetchData()
+    }, [])
 
-    }, []);
-    
+    async function fetchData() {
+        try {
+            const res = await axios.get("http://localhost:3030/api/count/")
+            setData(res.data[0])
+            console.log("res.data[0]", res.data[0])
+            console.log("res.data", res.data)
+        } catch (err) {
+            console.error("err", err)
+        }
+    }
+
     return (
         <footer>
             <nav>
