@@ -1,7 +1,7 @@
 import { Snippet } from "../../components/snippet"
 
 export function DocsByAuthor() {
-    const BASE_URL = process.env.NODE_ENV
+    const BASE_URL = window.location.href
 
     const fetchQuoteByAuthorName = `async function fetchData() {
         try {

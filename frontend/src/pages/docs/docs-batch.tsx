@@ -1,9 +1,9 @@
 import { Snippet } from "../../components/snippet";
 
 export function DocsBatchQuotes() {
-    const BASE_URL = process.env.NODE_ENV
+    const BASE_URL = window.location.href
     console.log("BASE_URL", BASE_URL)
-    
+
     const fetchBatchOfQuotes = `async function fetchData() {
         try {
             const response = await fetch("${BASE_URL}/api/quote/batch/3")
