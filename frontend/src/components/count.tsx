@@ -5,6 +5,7 @@ interface ICount {
 }
 
 export default function Count({ count }: ICount) {
+    console.log("count", count)
     return (
         <Link to="/">API fetched {count} times</Link>
     )
