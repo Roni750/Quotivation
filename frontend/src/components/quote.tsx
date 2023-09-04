@@ -12,6 +12,7 @@ function Quote({ data: { quote, author } }: IQuoteProps) {
             <h2>“{quote}”</h2>
             <span>-{author}</span>
         </section>
+
     )
 }
 
