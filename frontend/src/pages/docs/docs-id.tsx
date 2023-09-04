@@ -1,9 +1,11 @@
 import { Snippet } from "../../components/snippet"
 
 export function DocsGetById() {
+    const BASE_URL = process.env.NODE_ENV
+
     const fetchQuoteById = `async function fetchData() {
         try {
-            const response = await fetch("http://localhost:3030/api/quote/64ccc1c57fc90e687dccf4c6");
+            const response = await fetch("${BASE_URL}/api/quote/64ccc1c57fc90e687dccf4c6");
     
             if (!response.ok) {
                 throw new Error('Network response was not ok')

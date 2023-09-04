@@ -90,9 +90,9 @@ https://github.com/highlightjs/highlight.js/issues/2277`),he=h,Z=L);const ye={co
     "_id": "64dbbab3606bb353c68c7806",
     "quote": "Example is not the main thing in influencing other people; it’s the only thing.",
     "author": "Abraham Lincoln"
-}`;return y.jsxs(y.Fragment,{children:[y.jsx("h2",{children:"1. Get a Random Quote"}),y.jsx("p",{children:"Returns a random motivational quote."}),y.jsxs("ul",{children:[y.jsx("li",{children:"URL: /api/quote/random"}),y.jsx("li",{children:"Method: GET"})]}),y.jsx("p",{children:"Example response:"}),y.jsx(wn,{language:"json",code:e})]})}function ow(){const e=`async function fetchData() {
+}`;return y.jsxs(y.Fragment,{children:[y.jsx("h2",{children:"1. Get a Random Quote"}),y.jsx("p",{children:"Returns a random motivational quote."}),y.jsxs("ul",{children:[y.jsx("li",{children:"URL: /api/quote/random"}),y.jsx("li",{children:"Method: GET"})]}),y.jsx("p",{children:"Example response:"}),y.jsx(wn,{language:"json",code:e})]})}function ow(){const t=`async function fetchData() {
         try {
-            const response = await fetch("http://localhost:3030/api/quote/Steve Jobs")
+            const response = await fetch("production/api/quote/Steve Jobs")
     
             if (!response.ok) {
                 throw new Error('Network response was not ok')
@@ -102,7 +102,7 @@ https://github.com/highlightjs/highlight.js/issues/2277`),he=h,Z=L);const ye={co
         } catch (error) {
             console.error('Error fetching data:', error)
         }
-    }`,t=`[
+    }`,n=`[
         {
             "_id": "64ccc1c57fc90e687dccf4ce",
             "quote": "Your time is limited, so don’t waste it living someone else’s life.",
@@ -118,9 +118,9 @@ https://github.com/highlightjs/highlight.js/issues/2277`),he=h,Z=L);const ye={co
             "quote": "“Remembering you are going to die is the best way I know to avoid the trap of thinking you have something to lose.",
             "author": "Steve Jobs"
         }
-    ]`;return y.jsxs(y.Fragment,{children:[y.jsx("h2",{children:"2. Search quotes by author"}),y.jsx("p",{children:"Searches for motivation quotes by author name"}),y.jsxs("ul",{children:[y.jsx("li",{children:"URL: /api/quote/author/:name"}),y.jsx("li",{children:"Method: GET"})]}),y.jsx("p",{children:"Example request:"}),y.jsx(wn,{language:"javascript",code:e}),y.jsx("p",{children:"Example response:"}),y.jsx(wn,{language:"json",code:t})]})}function sw(){const e=`async function fetchData() {
+    ]`;return y.jsxs(y.Fragment,{children:[y.jsx("h2",{children:"2. Search quotes by author"}),y.jsx("p",{children:"Searches for motivation quotes by author name"}),y.jsxs("ul",{children:[y.jsx("li",{children:"URL: /api/quote/author/:name"}),y.jsx("li",{children:"Method: GET"})]}),y.jsx("p",{children:"Example request:"}),y.jsx(wn,{language:"javascript",code:t}),y.jsx("p",{children:"Example response:"}),y.jsx(wn,{language:"json",code:n})]})}function sw(){const e="production";console.log("BASE_URL",e);const t=`async function fetchData() {
         try {
-            const response = await fetch("http://localhost:3030/api/quote/batch/3")
+            const response = await fetch("${e}/api/quote/batch/3")
     
             if (!response.ok) {
                 throw new Error('Network response was not ok')
@@ -130,7 +130,7 @@ https://github.com/highlightjs/highlight.js/issues/2277`),he=h,Z=L);const ye={co
         } catch (error) {
             console.error('Error fetching data:', error)
         }
-    }`,t=`[
+    }`,n=`[
         {
             "_id": "64ccc1c67fc90e687dccf65e",
             "quote": "“Everyone is a genius. But if you judge a fish by its ability to climb a tree, it will spend its whole life believing it is stupid.",
@@ -146,9 +146,9 @@ https://github.com/highlightjs/highlight.js/issues/2277`),he=h,Z=L);const ye={co
             "quote": "We become what we think about.",
             "author": "Earl Nightingale"
         }
-    ]`;return y.jsxs(y.Fragment,{children:[y.jsx("h2",{children:"3. Get a batch of quotes"}),y.jsx("p",{children:"Randomly picks up the amount of quotes defined in the request"}),y.jsxs("ul",{children:[y.jsx("li",{children:"URL: /api/quote/batch/:amount"}),y.jsx("li",{children:"Method: GET"})]}),y.jsx("p",{children:"Example request:"}),y.jsx(wn,{language:"javascript",code:e}),y.jsx("p",{children:"Example response:"}),y.jsx(wn,{language:"json",code:t})]})}function lw(){const e=`async function fetchData() {
+    ]`;return y.jsxs(y.Fragment,{children:[y.jsx("h2",{children:"3. Get a batch of quotes"}),y.jsx("p",{children:"Randomly picks up the amount of quotes defined in the request"}),y.jsxs("ul",{children:[y.jsx("li",{children:"URL: /api/quote/batch/:amount"}),y.jsx("li",{children:"Method: GET"})]}),y.jsx("p",{children:"Example request:"}),y.jsx(wn,{language:"javascript",code:t}),y.jsx("p",{children:"Example response:"}),y.jsx(wn,{language:"json",code:n})]})}function lw(){const t=`async function fetchData() {
         try {
-            const response = await fetch("http://localhost:3030/api/quote/64ccc1c57fc90e687dccf4c6");
+            const response = await fetch("production/api/quote/64ccc1c57fc90e687dccf4c6");
     
             if (!response.ok) {
                 throw new Error('Network response was not ok')
@@ -158,8 +158,8 @@ https://github.com/highlightjs/highlight.js/issues/2277`),he=h,Z=L);const ye={co
         } catch (error) {
             console.error('Error fetching data:', error)
         }
-    }`,t=`{
+    }`,n=`{
         "_id": "64ccc1c57fc90e687dccf4c6",
         "quote": "We become what we think about.",
         "author": "Earl Nightingale"
-    }`;return y.jsxs(y.Fragment,{children:[y.jsx("h2",{children:"4. Get quote by id"}),y.jsx("p",{children:"Fetches the quote with the given id"}),y.jsxs("ul",{children:[y.jsx("li",{children:"URL: /api/quote/:id"}),y.jsx("li",{children:"Method: GET"})]}),y.jsx("p",{children:"Example request:"}),y.jsx(wn,{language:"javascript",code:e}),y.jsx("p",{children:"Example response:"}),y.jsx(wn,{language:"json",code:t})]})}function cw(){return y.jsx(y.Fragment,{children:y.jsx(Xv,{children:y.jsxs("section",{className:"main-layout",children:[y.jsx(eh,{}),y.jsx("main",{children:y.jsxs(Vv,{children:[y.jsx(Nn,{path:"/",element:y.jsx(zy,{})}),y.jsxs(Nn,{path:"/docs",element:y.jsx(Wy,{}),children:[y.jsx(Nn,{path:"random",element:y.jsx(iw,{})}),y.jsx(Nn,{path:"author",element:y.jsx(ow,{})}),y.jsx(Nn,{path:"batch",element:y.jsx(sw,{})}),y.jsx(Nn,{path:"getbyid",element:y.jsx(lw,{})})]})]})}),y.jsx(My,{})]})})})}v_.createRoot(document.getElementById("root")).render(y.jsx(cw,{}));
+    }`;return y.jsxs(y.Fragment,{children:[y.jsx("h2",{children:"4. Get quote by id"}),y.jsx("p",{children:"Fetches the quote with the given id"}),y.jsxs("ul",{children:[y.jsx("li",{children:"URL: /api/quote/:id"}),y.jsx("li",{children:"Method: GET"})]}),y.jsx("p",{children:"Example request:"}),y.jsx(wn,{language:"javascript",code:t}),y.jsx("p",{children:"Example response:"}),y.jsx(wn,{language:"json",code:n})]})}function cw(){return y.jsx(y.Fragment,{children:y.jsx(Xv,{children:y.jsxs("section",{className:"main-layout",children:[y.jsx(eh,{}),y.jsx("main",{children:y.jsxs(Vv,{children:[y.jsx(Nn,{path:"/",element:y.jsx(zy,{})}),y.jsxs(Nn,{path:"/docs",element:y.jsx(Wy,{}),children:[y.jsx(Nn,{path:"random",element:y.jsx(iw,{})}),y.jsx(Nn,{path:"author",element:y.jsx(ow,{})}),y.jsx(Nn,{path:"batch",element:y.jsx(sw,{})}),y.jsx(Nn,{path:"getbyid",element:y.jsx(lw,{})})]})]})}),y.jsx(My,{})]})})})}v_.createRoot(document.getElementById("root")).render(y.jsx(cw,{}));

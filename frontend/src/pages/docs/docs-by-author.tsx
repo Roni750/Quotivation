@@ -1,9 +1,11 @@
 import { Snippet } from "../../components/snippet"
 
 export function DocsByAuthor() {
+    const BASE_URL = process.env.NODE_ENV
+
     const fetchQuoteByAuthorName = `async function fetchData() {
         try {
-            const response = await fetch("http://localhost:3030/api/quote/Steve Jobs")
+            const response = await fetch("${BASE_URL}/api/quote/Steve Jobs")
     
             if (!response.ok) {
                 throw new Error('Network response was not ok')

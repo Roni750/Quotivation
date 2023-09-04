@@ -1,9 +1,12 @@
 import { Snippet } from "../../components/snippet";
 
 export function DocsBatchQuotes() {
+    const BASE_URL = process.env.NODE_ENV
+    console.log("BASE_URL", BASE_URL)
+    
     const fetchBatchOfQuotes = `async function fetchData() {
         try {
-            const response = await fetch("http://localhost:3030/api/quote/batch/3")
+            const response = await fetch("${BASE_URL}/api/quote/batch/3")
     
             if (!response.ok) {
                 throw new Error('Network response was not ok')
