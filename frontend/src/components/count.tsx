@@ -6,8 +6,13 @@ interface ICount {
     }
 }
 
-export default function Count({ data: { count } }: ICount) {
+export default function Count({ data }: ICount) {
+    // Check if data and data.count are defined
+    if (!data || !data.count) {
+        return null; // or some other fallback UI
+    }
+
     return (
-        <Link to="/">API fetched {count} times</Link>
+        <Link to="/">API fetched {data.count} times</Link>
     )
 }

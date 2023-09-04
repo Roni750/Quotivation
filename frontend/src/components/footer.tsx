@@ -25,7 +25,6 @@ export function Footer() {
         try {
             const count = await quoteService.fetchCount()
             setData(count as ICount)
-            console.log("count", count)
         } catch (err) {
             console.error("err", err)
         }
