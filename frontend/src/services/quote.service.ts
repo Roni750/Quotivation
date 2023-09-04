@@ -26,7 +26,8 @@ function query() {
 
 async function fetchCount() {
     try {
-        const heyo = await httpService.get(COUNTER_URL)
+        const heyo: string[] = await httpService.get(COUNTER_URL)
+        return heyo[0]
         console.log("heyo", heyo)  
         return httpService.get(COUNTER_URL)
     } catch (err) {
