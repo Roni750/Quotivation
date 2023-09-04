@@ -9,7 +9,10 @@ export const quoteService = {
     fetchCount
 }
 
-
+interface ICount {
+    _id: string
+    count: string
+}
 
 async function loadQuote() {
     try {
@@ -26,31 +29,9 @@ function query() {
 
 async function fetchCount() {
     try {
-        const heyo: string[] = await httpService.get(COUNTER_URL)
+        const heyo: ICount[] = await httpService.get(COUNTER_URL)
         return heyo[0]
-        console.log("heyo", heyo)  
-        return httpService.get(COUNTER_URL)
     } catch (err) {
         console.error("API counter couldn't be fetched.")
     }
 }
-
-// function get(quoteId) {
-//     // return storageService.get(STORAGE_KEY, quoteId)
-//     return httpService.get(BASE_URL + quoteId)
-// }
-
-// function remove(quoteId) {
-//     // return storageService.remove(STORAGE_KEY, quoteId)
-//     return httpService.delete(BASE_URL + quoteId)
-// }
-
-// function save(quote) {
-//     if (quote._id) {
-//         // return storageService.put(STORAGE_KEY, quote)
-//         return httpService.put(BASE_URL, quote)
-//     } else {
-//         return httpService.post(BASE_URL, quote)
-//         // return storageService.post(STORAGE_KEY, quote)
-//     }
-// }
