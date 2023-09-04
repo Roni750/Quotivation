@@ -32,7 +32,7 @@ export function Footer() {
                 <NavLink to="/docs">Docs</NavLink>
                 <NavLink to="/about">About</NavLink>
             </nav>
-            {data && <Count data={data} />}
+            {data && <Count count={data.count} />}
             <div className="socials">
                 <a href="https://github.com/Roni750"><FaGithub /></a>
                 <a href="https://www.linkedin.com/in/yerushalmi-roni/"><FaLinkedin color="#0a66c2" /></a>
