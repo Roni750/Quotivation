@@ -1,6 +1,7 @@
-import { useEffect, useState } from 'react'
-import {quoteService} from '../services/quote.service.js'
+import { useEffect, useState, CSSProperties } from 'react'
+import { quoteService } from '../services/quote.service.js'
 import Quote from '../components/quote';
+import CircleLoader  from 'react-spinners/CircleLoader.js';
 
 interface IQuoteProps {
     data: {
@@ -9,18 +10,27 @@ interface IQuoteProps {
     }
 }
 
+const override: CSSProperties = {
+    display: "block",
+    margin: "0 auto",
+    borderColor: "red",
+};
+
+
 export function QuoteIndex() {
     const [data, setData] = useState<IQuoteProps | any>()
+    // let [loading, setLoading] = useState(true);
+    // let [color, setColor] = useState("#ffffff");
 
     useEffect(() => {
         fetchData()
     }, [])
 
-    async function fetchData() { 
+    async function fetchData() {
         try {
             const quote = await quoteService.loadQuote()
             setData(quote)
-        } catch(err) {
+        } catch (err) {
             console.error(err)
         }
     }
@@ -29,8 +39,25 @@ export function QuoteIndex() {
         <div className="quote-index">
             {data ? (
                 <Quote data={data} />
-            ) : <h4>No quotes for display</h4>
+            ) : <div className="quote">
+                <CircleLoader  
+                    color="#252c3a"
+                    loading={true}
+                    cssOverride={override}
+                    size={150}
+                    aria-label="Loading Spinner"
+                    data-testid="loader"
+                />
+            </div>
             }
+            {/* <ClipLoader
+                color='#36d7b7'
+                loading={true}
+                cssOverride={override}
+                size={150}
+                aria-label="Loading Spinner"
+                data-testid="loader"
+            /> */}
         </div>
     )
 }
