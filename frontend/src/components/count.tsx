@@ -1,11 +1,12 @@
 import { Link } from "react-router-dom"
 
 interface ICount {
-    count: string
+    data: {
+        count: string
+    }
 }
 
-export default function Count({ count }: ICount) {
-    console.log("count", count)
+export default function Count({ data: { count } }: ICount) {
     return (
         <Link to="/">API fetched {count} times</Link>
     )
