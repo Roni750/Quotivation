@@ -5,12 +5,17 @@ import Count from "./count"
 import { NavLink } from "react-router-dom"
 import { quoteService } from "../services/quote.service"
 
+// interface ICount {
+//     count: string
+// }
+
 interface ICount {
+    _id: string
     count: string
 }
 
 export function Footer() {
-    const [data, setData] = useState<ICount | any>()
+    const [data, setData] = useState<ICount | null>()
 
     useEffect(() => {
         fetchData()
@@ -19,7 +24,7 @@ export function Footer() {
     async function fetchData() {
         try {
             const count = await quoteService.fetchCount()
-            setData(count)
+            setData(count as ICount)
             console.log("count", count)
         } catch (err) {
             console.error("err", err)
@@ -32,7 +37,7 @@ export function Footer() {
                 <NavLink to="/docs">Docs</NavLink>
                 <NavLink to="/about">About</NavLink>
             </nav>
-            {data && <Count data={data.count} />}
+            {data && <Count data={data} />}
             <div className="socials">
                 <a href="https://github.com/Roni750"><FaGithub /></a>
                 <a href="https://www.linkedin.com/in/yerushalmi-roni/"><FaLinkedin color="#0a66c2" /></a>
