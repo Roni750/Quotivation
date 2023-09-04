@@ -1,16 +1,16 @@
 import { useEffect, useState } from "react"
-import axios from 'axios'
 import { FaGithub } from 'react-icons/fa'
 import { FaLinkedin } from 'react-icons/fa'
 import Count from "./count"
 import { NavLink } from "react-router-dom"
+import { quoteService } from "../services/quote.service"
 
 interface ICount {
     count: string
 }
 
 export function Footer() {
-    const [data, setData] = useState<ICount | null>()
+    const [data, setData] = useState<ICount | any>()
 
     useEffect(() => {
         fetchData()
@@ -18,10 +18,9 @@ export function Footer() {
 
     async function fetchData() {
         try {
-            const res = await axios.get("http://localhost:3030/api/count/")
-            setData(res.data[0])
-            console.log("res.data[0]", res.data[0])
-            console.log("res.data", res.data)
+            const count = await quoteService.fetchCount()
+            setData(count)
+            console.log("count", count)
         } catch (err) {
             console.error("err", err)
         }

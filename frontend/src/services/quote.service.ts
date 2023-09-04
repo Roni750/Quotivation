@@ -1,10 +1,12 @@
 import { httpService } from './http.service.js'
 
 const BASE_URL = 'quote/'
+const COUNTER_URL = 'count/'
 
 export const quoteService = {
     query,
-    loadQuote
+    loadQuote,
+    fetchCount
 }
 
 
@@ -20,6 +22,14 @@ async function loadQuote() {
 
 function query() {
     return httpService.get(BASE_URL)
+}
+
+function fetchCount() {
+    try {
+        return httpService.get(COUNTER_URL)
+    } catch (err) {
+        console.error("API counter couldn't be fetched.")
+    }
 }
 
 // function get(quoteId) {
