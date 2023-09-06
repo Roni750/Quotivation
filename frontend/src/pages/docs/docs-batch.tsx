@@ -1,7 +1,7 @@
 import { Snippet } from "../../components/snippet";
 
 export function DocsBatchQuotes() {
-    const BASE_URL = window.location.href
+    const BASE_URL = process.env.DOMAIN
     console.log("BASE_URL", BASE_URL)
 
     const fetchBatchOfQuotes = `async function fetchData() {

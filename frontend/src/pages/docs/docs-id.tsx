@@ -1,7 +1,7 @@
 import { Snippet } from "../../components/snippet"
 
 export function DocsGetById() {
-    const BASE_URL = window.location.href
+    const BASE_URL = process.env.DOMAIN
 
     const fetchQuoteById = `async function fetchData() {
         try {
