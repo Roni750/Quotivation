@@ -5,18 +5,16 @@ import { logger } from './services/logger.service.js'
 import path from 'path'
 import { config } from 'dotenv'
 import { rateLimit } from 'express-rate-limit'
+import { Request } from 'request-ip'
 
 config()
 
 const apiLimiter = rateLimit({
 	windowMs: 1 * 60 * 1000, // 1 minute
 	max: 10, // Limit each IP to 10 requests per minute
-	// keyGenerator: (req) => {
-	//     // Use the user's IP address as the key for rate limiting
-	//     return req.ip;
-	// },
 	keyGenerator: (req) => {
-		return req.headers["x-forwarded-for"] || IncomingMessage.connection.remoteAddress;;
+	    // Use the user's IP address as the key for rate limiting
+	    return req.ip;
 	},
 	message: "Too many requests from this IP",
 	handler: (req, res) => {
@@ -35,7 +33,7 @@ const app = express()
 const server = http.createServer(app)
 
 app.use(cors())
-// app.set('trust proxy', 1)
+app.use(request.windowMs)
 app.use('/api/quote', apiLimiter)
 app.use(express.json())
 app.use(express.static('public'))
