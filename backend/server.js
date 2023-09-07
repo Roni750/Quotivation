@@ -5,7 +5,6 @@ import { logger } from './services/logger.service.js'
 import path from 'path'
 import { config } from 'dotenv'
 import { rateLimit } from 'express-rate-limit'
-// const requestIp = require('request-ip');
 
 config()
 
@@ -20,7 +19,6 @@ const app = express()
 const server = http.createServer(app)
 
 app.use(cors())
-app.use(requestIp.mw)
 app.use('/api/quote', apiLimiter)
 app.use(express.json())
 app.use(express.static('public'))
