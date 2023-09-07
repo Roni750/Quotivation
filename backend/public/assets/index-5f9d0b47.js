@@ -92,7 +92,7 @@ https://github.com/highlightjs/highlight.js/issues/2277`),he=h,Z=L);const ye={co
     "author": "Abraham Lincoln"
 }`;return y.jsxs(y.Fragment,{children:[y.jsx("h2",{children:"1. Get a Random Quote"}),y.jsx("p",{children:"Returns a random motivational quote."}),y.jsxs("ul",{children:[y.jsx("li",{children:"URL: /api/quote/random"}),y.jsx("li",{children:"Method: GET"})]}),y.jsx("p",{children:"Example response:"}),y.jsx(wn,{language:"json",code:e})]})}function ow(){const t=`async function fetchData() {
         try {
-            const response = await fetch("${{}.DOMAIN}/api/quote/Steve Jobs")
+            const response = await fetch("https://quotivation.onrender.com/api/quote/Steve Jobs")
     
             if (!response.ok) {
                 throw new Error('Network response was not ok')
@@ -118,9 +118,9 @@ https://github.com/highlightjs/highlight.js/issues/2277`),he=h,Z=L);const ye={co
             "quote": "“Remembering you are going to die is the best way I know to avoid the trap of thinking you have something to lose.",
             "author": "Steve Jobs"
         }
-    ]`;return y.jsxs(y.Fragment,{children:[y.jsx("h2",{children:"2. Search quotes by author"}),y.jsx("p",{children:"Searches for motivation quotes by author name"}),y.jsxs("ul",{children:[y.jsx("li",{children:"URL: /api/quote/author/:name"}),y.jsx("li",{children:"Method: GET"})]}),y.jsx("p",{children:"Example request:"}),y.jsx(wn,{language:"javascript",code:t}),y.jsx("p",{children:"Example response:"}),y.jsx(wn,{language:"json",code:n})]})}function sw(){const e={}.DOMAIN;console.log("BASE_URL",e);const t=`async function fetchData() {
+    ]`;return y.jsxs(y.Fragment,{children:[y.jsx("h2",{children:"2. Search quotes by author"}),y.jsx("p",{children:"Searches for motivation quotes by author name"}),y.jsxs("ul",{children:[y.jsx("li",{children:"URL: /api/quote/author/:name"}),y.jsx("li",{children:"Method: GET"})]}),y.jsx("p",{children:"Example request:"}),y.jsx(wn,{language:"javascript",code:t}),y.jsx("p",{children:"Example response:"}),y.jsx(wn,{language:"json",code:n})]})}function sw(){const t=`async function fetchData() {
         try {
-            const response = await fetch("${e}/api/quote/batch/3")
+            const response = await fetch("https://quotivation.onrender.com/api/quote/batch/3")
     
             if (!response.ok) {
                 throw new Error('Network response was not ok')
@@ -148,7 +148,7 @@ https://github.com/highlightjs/highlight.js/issues/2277`),he=h,Z=L);const ye={co
         }
     ]`;return y.jsxs(y.Fragment,{children:[y.jsx("h2",{children:"3. Get a batch of quotes"}),y.jsx("p",{children:"Randomly picks up the amount of quotes defined in the request"}),y.jsxs("ul",{children:[y.jsx("li",{children:"URL: /api/quote/batch/:amount"}),y.jsx("li",{children:"Method: GET"})]}),y.jsx("p",{children:"Example request:"}),y.jsx(wn,{language:"javascript",code:t}),y.jsx("p",{children:"Example response:"}),y.jsx(wn,{language:"json",code:n})]})}function lw(){const t=`async function fetchData() {
         try {
-            const response = await fetch("${{}.DOMAIN}/api/quote/64ccc1c57fc90e687dccf4c6");
+            const response = await fetch("https://quotivation.onrender.com/api/quote/64ccc1c57fc90e687dccf4c6");
     
             if (!response.ok) {
                 throw new Error('Network response was not ok')
