@@ -1,8 +1,7 @@
 import { Snippet } from "../../components/snippet";
 
 export function DocsBatchQuotes() {
-    const BASE_URL = process.env.DOMAIN
-    console.log("BASE_URL", BASE_URL)
+    const BASE_URL = 'https://quotivation.onrender.com'
 
     const fetchBatchOfQuotes = `async function fetchData() {
         try {

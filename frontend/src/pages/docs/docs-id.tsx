@@ -1,7 +1,7 @@
 import { Snippet } from "../../components/snippet"
 
 export function DocsGetById() {
-    const BASE_URL = process.env.DOMAIN
+    const BASE_URL = 'https://quotivation.onrender.com'
 
     const fetchQuoteById = `async function fetchData() {
         try {
