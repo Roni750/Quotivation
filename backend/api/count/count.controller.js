@@ -7,12 +7,15 @@ export async function getUsageCount(req, res) {
     if (count) res.json(count)
     else throw new Error('Failed to get count')
   } catch (err) {
-    logger.error('Failed to get quote', err.message)
+    logger.error('Failed to get count', err.message)
     res.status(400).send({ error: err.message })
   }
 }
 
 export async function incrementUsageCount(req, res) {
-  const count = await countService.incrementCount()
-  res.json(count)
+  try {
+    countService.incrementCount()
+  } catch (err) {
+    logger.error('Failed to increment API counter')
+  }
 }
