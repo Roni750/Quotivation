@@ -16,7 +16,7 @@ const apiLimiter = rateLimit({
 	//     return req.ip;
 	// },
 	keyGenerator: (req) => {
-		return req.headers["x-forwarded-for"] || req.connection.remoteAddress;
+		return req.headers["x-forwarded-for"] || IncomingMessage.connection.remoteAddress;;
 	},
 	message: "Too many requests from this IP",
 	handler: (req, res) => {
