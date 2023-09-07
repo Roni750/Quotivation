@@ -1,7 +1,7 @@
 import { useEffect, useState, CSSProperties } from 'react'
 import { quoteService } from '../services/quote.service.js'
 import Quote from '../components/quote';
-import CircleLoader  from 'react-spinners/CircleLoader.js';
+import CircleLoader from 'react-spinners/CircleLoader.js';
 
 interface IQuoteProps {
     data: {
@@ -19,8 +19,6 @@ const override: CSSProperties = {
 
 export function QuoteIndex() {
     const [data, setData] = useState<IQuoteProps | any>()
-    // let [loading, setLoading] = useState(true);
-    // let [color, setColor] = useState("#ffffff");
 
     useEffect(() => {
         fetchData()
@@ -40,7 +38,7 @@ export function QuoteIndex() {
             {data ? (
                 <Quote data={data} />
             ) : <div className="quote">
-                <CircleLoader  
+                <CircleLoader
                     color="#252c3a"
                     loading={true}
                     cssOverride={override}
@@ -50,14 +48,6 @@ export function QuoteIndex() {
                 />
             </div>
             }
-            {/* <ClipLoader
-                color='#36d7b7'
-                loading={true}
-                cssOverride={override}
-                size={150}
-                aria-label="Loading Spinner"
-                data-testid="loader"
-            /> */}
         </div>
     )
 }
