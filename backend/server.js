@@ -5,7 +5,7 @@ import { logger } from './services/logger.service.js'
 import path from 'path'
 import { config } from 'dotenv'
 import { rateLimit } from 'express-rate-limit'
-const requestIp = require('request-ip');
+// const requestIp = require('request-ip');
 
 config()
 
@@ -42,7 +42,8 @@ const apiLimiter = rateLimit({
 	windowMs: 1 * 60 * 1000,
 	max: 10,
 	keyGenerator: (req) => {
-	    return req.ip;
+	    return req.socket.remoteAddress;
+	    // return req.ip;
 	},
 	message: "Too many requests from this IP",
 	handler: (req, res) => {
