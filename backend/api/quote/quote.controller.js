@@ -47,14 +47,10 @@ export async function getBatchQuotes(req, res) {
 
 }
 
-// export async function incrementCount() {
-//   await axios.get("http://localhost:3030/api/count/increment")
-// }
-
 export async function getQuotes(req, res) {
   try {
-    logger.debug('Getting Quotes:')
     const quotes = await quoteService.query()
+    logger.debug('Getting Quotes:', quotes)
     res.json(quotes)
   } catch (err) {
     logger.error('Failed to get quotes', err)

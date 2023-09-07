@@ -8,13 +8,6 @@ import { rateLimit } from 'express-rate-limit'
 
 config()
 
-// const apiLimiter = rateLimit({
-// 	windowMs: 1 * 60 * 1000, // 1 minute
-// 	max: 10, // Limit each IP to 100 requests per `window`
-// 	standardHeaders: 'draft-7', // Set `RateLimit` and `RateLimit-Policy`` headers
-// 	legacyHeaders: false, // Disable the `X-RateLimit-*` headers
-// })
-
 const app = express()
 const server = http.createServer(app)
 
@@ -23,7 +16,6 @@ const apiLimiter = rateLimit({
 	max: 10,
 	keyGenerator: (req) => {
 	    return req.socket.remoteAddress
-	    // return req.ip;
 	},
 	message: "Too many requests from this IP",
 	handler: (req, res) => {

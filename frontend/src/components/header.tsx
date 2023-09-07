@@ -1,6 +1,8 @@
+import { Link } from "react-router-dom";
+
 export function Header() {
 
     return (
-        <header><span>“</span>Quotivation</header>
+        <header><Link to="/"><span>“</span>Quotivation</Link></header>
     )
-}
+} 

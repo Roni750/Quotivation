@@ -1,5 +1,3 @@
-import { Link } from "react-router-dom"
-
 interface ICount {
     data: {
         count: string
@@ -13,6 +11,6 @@ export default function Count({ data }: ICount) {
     }
 
     return (
-        <Link to="/">API fetched {data.count} times</Link>
+        <span>API fetched {data.count} times</span>
     )
 }
