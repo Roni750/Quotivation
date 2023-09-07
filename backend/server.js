@@ -9,11 +9,23 @@ import { rateLimit } from 'express-rate-limit'
 config()
 
 const apiLimiter = rateLimit({
-	windowMs: 1 * 60 * 1000, // 1 minute
-	max: 10, // Limit each IP to 100 requests per `window`
-	standardHeaders: 'draft-7', // Set `RateLimit` and `RateLimit-Policy`` headers
-	legacyHeaders: false, // Disable the `X-RateLimit-*` headers
-})
+    windowMs: 1 * 60 * 1000, // 1 minute
+    max: 10, // Limit each IP to 10 requests per minute
+    keyGenerator: (req) => {
+        // Use the user's IP address as the key for rate limiting
+        return req.ip;
+    },
+    handler: (req, res) => {
+        res.status(429).json({ error: 'Rate limit exceeded' });
+    },
+});
+
+// const apiLimiter = rateLimit({
+// 	windowMs: 1 * 60 * 1000, // 1 minute
+// 	max: 10, // Limit each IP to 100 requests per `window`
+// 	standardHeaders: 'draft-7', // Set `RateLimit` and `RateLimit-Policy`` headers
+// 	legacyHeaders: false, // Disable the `X-RateLimit-*` headers
+// })
 
 const app = express()
 const server = http.createServer(app)
