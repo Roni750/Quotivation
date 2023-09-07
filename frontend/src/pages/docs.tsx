@@ -28,7 +28,7 @@ export function Docs() {
             </h2>
             <p>
                 The API has rate limits to prevent abuse and ensure fair usage. The current rate limits are as follows:<br />
-                Public Endpoints: X requests per minute/hour/day.
+                Public Endpoints: 10 requests per minute.
             </p>
 
             <h2>Error Handling</h2>

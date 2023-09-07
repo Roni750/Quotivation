@@ -4,24 +4,24 @@ export function DocsGetById() {
     const BASE_URL = 'https://quotivation.onrender.com'
 
     const fetchQuoteById = `async function fetchData() {
-        try {
-            const response = await fetch("${BASE_URL}/api/quote/64ccc1c57fc90e687dccf4c6");
+    try {
+        const response = await fetch("${BASE_URL}/api/quote/64dbbab3606bb353c68c771f");
     
-            if (!response.ok) {
-                throw new Error('Network response was not ok')
-            }
-    
-            const data = await response.json()
-        } catch (error) {
-            console.error('Error fetching data:', error)
+        if (!response.ok) {
+            throw new Error('Network response was not ok')
         }
-    }`
+    
+        const data = await response.json()
+    } catch (error) {
+        console.error('Error fetching data:', error)
+    }
+}`
 
     const responseQuoteById = `{
-        "_id": "64ccc1c57fc90e687dccf4c6",
-        "quote": "We become what we think about.",
-        "author": "Earl Nightingale"
-    }`
+    "_id": "64dbbab3606bb353c68c771f",
+    "quote": "Life isn\`t about getting and having, it\`s about giving and being.",
+    "author": "Kevin Kruse"
+}`
     return (
         <>
             <h2>4. Get quote by id</h2>
