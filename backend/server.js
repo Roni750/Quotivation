@@ -9,16 +9,19 @@ import { rateLimit } from 'express-rate-limit'
 config()
 
 const apiLimiter = rateLimit({
-    windowMs: 1 * 60 * 1000, // 1 minute
-    max: 10, // Limit each IP to 10 requests per minute
-    keyGenerator: (req) => {
-        // Use the user's IP address as the key for rate limiting
-        return req.ip;
-    },
-	nessage: "Too many requests from this IP",
-    handler: (req, res) => {
-        res.status(429).json({ error: 'Rate limit exceeded' });
-    },
+	windowMs: 1 * 60 * 1000, // 1 minute
+	max: 10, // Limit each IP to 10 requests per minute
+	// keyGenerator: (req) => {
+	//     // Use the user's IP address as the key for rate limiting
+	//     return req.ip;
+	// },
+	keyGenerator: (req) => {
+		return req.headers["x-forwarded-for"] || req.connection.remoteAddress;
+	},
+	message: "Too many requests from this IP",
+	handler: (req, res) => {
+		res.status(429).json({ error: 'Rate limit exceeded' });
+	},
 });
 
 // const apiLimiter = rateLimit({
@@ -32,7 +35,7 @@ const app = express()
 const server = http.createServer(app)
 
 app.use(cors())
-app.set('trust proxy', 1)
+// app.set('trust proxy', 1)
 app.use('/api/quote', apiLimiter)
 app.use(express.json())
 app.use(express.static('public'))
