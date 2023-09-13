@@ -10,21 +10,45 @@ config()
 
 const app = express()
 const server = http.createServer(app)
-
-const apiLimiter = rateLimit({
-	windowMs: 1 * 60 * 1000,
-	max: 10,
-	keyGenerator: (req) => {
-	    return req.socket.remoteAddress
-	},
-	message: "Too many requests from this IP",
-	handler: (req, res) => {
-		res.status(429).json({ error: 'Rate limit exceeded' })
-	},
-})
+const ipLimiters = new Map();
+const createIpLimiter = (ip) => {
+	return rateLimit({
+		windowMs: 1 * 60 * 1000, // 1 minute
+		max: 10, // Maximum 10 requests per minute per IP
+		keyGenerator: (req) => {
+			return ip; // Use the IP address as the key for rate limiting
+		},
+		message: "Too many requests from this IP",
+		handler: (req, res) => {
+			res.status(429).json({ error: 'Rate limit exceeded' });
+		},
+	});
+};
+// const apiLimiter = rateLimit({
+// 	windowMs: 1 * 60 * 1000,
+// 	max: 10,
+// 	keyGenerator: (req) => {
+// 	    return req.socket.remoteAddress
+// 	},
+// 	message: "Too many requests from this IP",
+// 	handler: (req, res) => {
+// 		res.status(429).json({ error: 'Rate limit exceeded' })
+// 	},
+// })
 
 app.use(cors())
-app.use('/api/quote', apiLimiter)
+// app.use('/api/quote', apiLimiter)
+app.use('/api/quote', (req, res, next) => {
+	const clientIp = req.socket.remoteAddress;
+
+	// Check if a rate limiter for this IP already exists; if not, create one
+	if (!ipLimiters.has(clientIp)) {
+		ipLimiters.set(clientIp, createIpLimiter(clientIp));
+	}
+
+	// Apply the rate limiter for this IP
+	ipLimiters.get(clientIp)(req, res, next);
+});
 app.use(express.json())
 app.use(express.static('public'))
 
