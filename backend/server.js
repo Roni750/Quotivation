@@ -19,9 +19,9 @@ const createIpLimiter = (ip) => {
 			return ip; // Use the IP address as the key for rate limiting
 		},
 		message: "Too many requests from this IP",
-		handler: (req, res) => {
-			res.status(429).json({ error: 'Rate limit exceeded' });
-		},
+		// handler: (req, res) => {
+		// 	res.status(429).json({ error: 'Rate limit exceeded' });
+		// },
 	});
 };
 // const apiLimiter = rateLimit({
