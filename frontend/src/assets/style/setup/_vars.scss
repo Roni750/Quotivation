@@ -4,8 +4,6 @@ $clr2: #38598b;
 $clr3: #a2a8d3;
 $clr4: #e7eaf6;
 
-// replace clr 2 -> clr 3
-// replace clr 3 -> clr 4
 $bgclr1: #113f67;
 
 // LAYOUT
@@ -15,10 +13,3 @@ $layoutPadding: 30px;
 $break-narrow: 600px;
 $break-normal: 860px;
 $break-wide: 1200px;
-// $break-narrow: 1200px;
-// $break-normal: 1360px;
-// $break-wide: 1920px;
-
-$padded-break-narrow: $break-narrow + $layoutPadding * 2;
-$padded-break-normal: $break-normal + $layoutPadding * 2;
-$padded-break-wide: $break-wide + $layoutPadding * 2;
