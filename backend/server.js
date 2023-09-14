@@ -4,31 +4,19 @@ import express from 'express'
 import path from 'path'
 import { logger } from './services/logger.service.js'
 import { config } from 'dotenv'
-import { rateLimit } from 'express-rate-limit'
+import { quoteRoutes } from './api/quote/quote.routes.js'
+import { countRoutes } from './api/count/count.routes.js'
 
 config()
 
 const app = express()
 const server = http.createServer(app)
 
-
 app.use(cors())
 app.use(express.json())
-
-const apiLimiter = rateLimit({
-	windowMs: 1 * 60 * 1000,
-	limit: 5, // Limit each IP to 5 create account requests per `window` (here, per hour)
-	message:
-		'Too many requests from this IP, please try again after an hour',
-	keyGenerator: (req, res) => req.ip,
-	standardHeaders: 'draft-7', // draft-6: `RateLimit-*` headers; draft-7: combined `RateLimit` header
-	legacyHeaders: true, // Disable the `X-RateLimit-*` headers
-})
-
-app.use('/api/quote', apiLimiter)
-
 app.use(express.static('public'))
-
+app.use('/api/quote', quoteRoutes)
+app.use('/api/count', countRoutes)
 
 if (process.env.NODE_ENV === 'production') {
 	app.use(express.static(path.resolve('public')))
@@ -42,11 +30,6 @@ if (process.env.NODE_ENV === 'production') {
 	}
 	app.use(cors(corsOptions))
 }
-
-import { quoteRoutes } from './api/quote/quote.routes.js'
-import { countRoutes } from './api/count/count.routes.js'
-app.use('/api/quote', quoteRoutes)
-app.use('/api/count', countRoutes)
 
 app.get('/**', (req, res) => {
 	res.sendFile(path.resolve('public/index.html'))
