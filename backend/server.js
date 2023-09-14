@@ -4,7 +4,7 @@ import express from 'express'
 import path from 'path'
 import { logger } from './services/logger.service.js'
 import { config } from 'dotenv'
-import { rateLimiterUsingThirdParty } from './middleware';
+import { rateLimiterUsingThirdParty } from './middleware/index.js'
 
 config()
 
