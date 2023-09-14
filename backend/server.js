@@ -19,7 +19,8 @@ const apiLimiter = rateLimit({
 	windowMs: 1 * 60 * 1000,
 	limit: 5, // Limit each IP to 5 create account requests per `window` (here, per hour)
 	message:
-		'Too many accounts created from this IP, please try again after an hour',
+		'Too many requests from this IP, please try again after an hour',
+	keyGenerator: (req, res) => req.ip,
 	standardHeaders: 'draft-7', // draft-6: `RateLimit-*` headers; draft-7: combined `RateLimit` header
 	legacyHeaders: true, // Disable the `X-RateLimit-*` headers
 })
