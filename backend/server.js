@@ -3,7 +3,6 @@ import cors from 'cors'
 import express from 'express'
 import path from 'path'
 import { logger } from './services/logger.service.js'
-import { config } from 'dotenv'
 import { quoteRoutes } from './api/quote/quote.routes.js'
 import { countRoutes } from './api/count/count.routes.js'
 
