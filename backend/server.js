@@ -6,8 +6,6 @@ import { logger } from './services/logger.service.js'
 import { quoteRoutes } from './api/quote/quote.routes.js'
 import { countRoutes } from './api/count/count.routes.js'
 
-config()
-
 const app = express()
 const server = http.createServer(app)
 
