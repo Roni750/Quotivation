@@ -16,12 +16,13 @@ const createIpLimiter = (ip) => {
 		windowMs: 1 * 60 * 1000, // 1 minute
 		max: 10, // Maximum 10 requests per minute per IP
 		keyGenerator: (req) => {
+			console.log("ip", ip)
 			return ip; // Use the IP address as the key for rate limiting
 		},
 		message: "Too many requests from this IP",
-		// handler: (req, res) => {
-		// 	res.status(429).json({ error: 'Rate limit exceeded' });
-		// },
+		handler: (req, res) => {
+			res.status(429).json({ error: 'Rate limit exceeded' });
+		},
 	});
 };
 // const apiLimiter = rateLimit({
@@ -40,7 +41,7 @@ app.use(cors())
 // app.use('/api/quote', apiLimiter)
 app.use('/api/quote', (req, res, next) => {
 	const clientIp = req.socket.remoteAddress;
-
+	console.log("clientIp", clientIp)
 	// Check if a rate limiter for this IP already exists; if not, create one
 	if (!ipLimiters.has(clientIp)) {
 		ipLimiters.set(clientIp, createIpLimiter(clientIp));
