@@ -21,7 +21,7 @@ const apiLimiter = rateLimit({
 	message:
 		'Too many accounts created from this IP, please try again after an hour',
 	standardHeaders: 'draft-7', // draft-6: `RateLimit-*` headers; draft-7: combined `RateLimit` header
-	legacyHeaders: false, // Disable the `X-RateLimit-*` headers
+	legacyHeaders: true, // Disable the `X-RateLimit-*` headers
 })
 
 app.use('/api/quote', apiLimiter)
