@@ -6,4 +6,4 @@ export const rateLimiterUsingThirdParty = rateLimit({
     message: 'You have exceeded the 100 requests in 24 hrs limit!',
     standardHeaders: true,
     legacyHeaders: false,
-});
+})
