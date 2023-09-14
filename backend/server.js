@@ -4,29 +4,30 @@ import express from 'express'
 import path from 'path'
 import { logger } from './services/logger.service.js'
 import { config } from 'dotenv'
-import { rateLimiterUsingThirdParty } from './middleware/index.js'
+import { rateLimit } from 'express-rate-limit'
 
 config()
 
 const app = express()
 const server = http.createServer(app)
 
-// const apiLimiter = rateLimit({
-// 	windowMs: 1 * 60 * 1000,
-// 	max: 10,
-// 	keyGenerator: (req) => {
-// 	    return req.socket.remoteAddress
-// 	},
-// 	message: "Too many requests from this IP",
-// 	handler: (req, res) => {
-// 		res.status(429).json({ error: 'Rate limit exceeded' })
-// 	},
-// })
 
 app.use(cors())
-app.use('/api/quote', rateLimiterUsingThirdParty)
 app.use(express.json())
+
+const apiLimiter = rateLimit({
+	windowMs: 1 * 60 * 1000,
+	limit: 5, // Limit each IP to 5 create account requests per `window` (here, per hour)
+	message:
+		'Too many accounts created from this IP, please try again after an hour',
+	standardHeaders: 'draft-7', // draft-6: `RateLimit-*` headers; draft-7: combined `RateLimit` header
+	legacyHeaders: false, // Disable the `X-RateLimit-*` headers
+})
+
+app.use('/api/quote', apiLimiter)
+
 app.use(express.static('public'))
+
 
 if (process.env.NODE_ENV === 'production') {
 	app.use(express.static(path.resolve('public')))
